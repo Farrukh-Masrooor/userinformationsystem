@@ -1,0 +1,21 @@
+DATASOURCE_URL: jdbc:mysql://localhost:3306/world?useSSL=false
+DATASOURCE_USER_NAME: root
+DATASOURCE_PASSWORD: adeptia
+DATASOURCE_DRIVER_CLASS: com.mysql.cj.jdbc.Driver
+PORT_NO: 9090
+server:
+  port: ${PORT_NO:8080}
+
+spring:
+  resources:
+    staticLocations: 'file:src/main/resources/WebContent'
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USER_NAME}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: ${DATASOURCE_DRIVER_CLASS}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
