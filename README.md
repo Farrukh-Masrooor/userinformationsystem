@@ -1,5 +1,8 @@
 #User Information system
 User Information system is a simple CRUD Web application that let's you create update and delete user infomation such as name, city, mobile number and date of birth.
+Prerreuisite
+- java soul be installed
+- sencha should be installed
 ##How to Install and Run the Project
 - Fork the repository
 - run the maven install goal to create the jar file
