@@ -12,7 +12,7 @@ Ext.define('MyApp.store.UserInfoStore',{
                     {name: 'lName', type: 'string'},
                     {name: 'city', type: 'string'},
                     {name: 'mobileNumber', type: 'string'},
-                    {name: 'dob', type: 'string'},
+                    {name: 'dob', type: 'date'},
                     ],
 
 	proxy: {
