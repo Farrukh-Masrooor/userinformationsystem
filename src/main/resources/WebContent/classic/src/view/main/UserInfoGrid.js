@@ -82,17 +82,27 @@ Ext.define('MyApp.view.main.UserInfoGrid',{
             editor: {
                    		     xtype: 'textfield',
                      	     allowBlank: false,
-
+                             maxLength: 10,
+                             maskRe:/[0-9.]/,
+                             enforceMaxLength: true,
+                             validator: function(value) {
+                                                 return value.length==10 || 'please eneter a valid mobile number';
+                                             },
+                             allowBlank: false,
                  			},
         },
         {
             text: 'Date of birth',
-
+            xtype:'datecolumn',
             dataIndex: 'dob',
             flex:1,
             editor: {
-                   		     xtype: 'textfield',
-                     	     allowBlank: false,
+                   		     xtype: 'datefield',
+                             name: 'dob',
+                             format: "Y-m-d",
+
+                             allowBlank: false,
+                             maxValue: new Date()
 
                  			},
         },
@@ -147,6 +157,7 @@ Ext.define('MyApp.view.main.UserInfoGrid',{
             edit: function(editor, e) {
                 var data=e.record.data;
                 delete data.id;
+	    	Ext.Date.format(data.dob,"Y-m-d");
                 Ext.Ajax.request(
                 {
                     scope:this,
